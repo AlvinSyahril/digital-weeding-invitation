@@ -85,16 +85,23 @@ export default function GalleryGrid({ data }: GalleryGridProps) {
             onClick={() => handleOpenLightbox(currentSliderIndex)}
             aria-label="Open gallery image"
           >
-            <Image
-              key={currentImage} // Key forces re-render/animation if we add css transition
-              src={currentImage}
-              alt="Gallery Image"
-              fill
-              className={styles.featuredImage}
-              sizes="(max-width: 768px) 100vw, 1200px"
-              style={{ objectPosition: getObjectPosition(currentImage) }}
-              priority
-            />
+            {allImages.map((img, idx) => (
+              <Image
+                key={img}
+                src={img}
+                alt="Gallery Image"
+                fill
+                className={styles.featuredImage}
+                sizes="(max-width: 768px) 100vw, 1200px"
+                style={{ 
+                  objectPosition: getObjectPosition(img),
+                  opacity: idx === currentSliderIndex ? 1 : 0,
+                  transition: 'opacity 0.6s ease, transform var(--motion-dur-slow) var(--motion-ease-default)',
+                  zIndex: idx === currentSliderIndex ? 2 : 1
+                }}
+                priority={idx === 0 || idx === 1}
+              />
+            ))}
             
             {allImages.length > 1 && (
               <>

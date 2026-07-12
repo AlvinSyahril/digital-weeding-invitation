@@ -58,8 +58,19 @@
   },
   "gift": {
     "title": "Wedding Gift",
-    "description": "Soon",
-    "banks": []
+    "description": "Your blessing is a meaningful gift for us. However, if you would like to give a gift, you can use the following accounts:",
+    "banks": [
+      {
+        "bankName": "BCA",
+        "accountNumber": "1234567890",
+        "accountName": "Raden Hanief Izhar Zulkarnain"
+      },
+      {
+        "bankName": "Mandiri",
+        "accountNumber": "0987654321",
+        "accountName": "Dwi Hasri Septianti"
+      }
+    ]
   },
   "branding": {
     "theme": "botanical-blue",

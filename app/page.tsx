@@ -41,7 +41,7 @@ export default function Home() {
 
   // Mock guest for demonstration
   const guest: Guest = {
-    name: "John Doe",
+    name: "Tamu Undangan",
     category: "VIP"
   };
 
