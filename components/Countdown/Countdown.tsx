@@ -8,7 +8,7 @@ import data from '../../data/invitation.json';
 
 export default function Countdown({ timestamp }: CountdownProps) {
   // Use abstract generator for calendar link
-  const calendarLink = generateCalendarLink('google', `${data.couple.bride.nickname} & ${data.couple.groom.nickname} Wedding`, timestamp);
+  const calendarLink = generateCalendarLink('google', `${data.bride.name} & ${data.groom.name} Wedding`, timestamp);
 
   return (
     <SectionContainer id="countdown" backgroundColor="background">

@@ -3,8 +3,8 @@ import "./globals.css";
 import data from '../data/invitation.json';
 
 export const metadata: Metadata = {
-  title: data.seo?.title || `${data.couple.bride.nickname} & ${data.couple.groom.nickname} | Wedding Invitation`,
-  description: data.seo?.description || `Wedding Invitation of ${data.couple.bride.nickname} & ${data.couple.groom.nickname}`,
+  title: data.seo?.title || `${data.bride.name} & ${data.groom.name} | Wedding Invitation`,
+  description: data.seo?.description || `Wedding Invitation of ${data.bride.name} & ${data.groom.name}`,
 };
 
 export default function RootLayout({
