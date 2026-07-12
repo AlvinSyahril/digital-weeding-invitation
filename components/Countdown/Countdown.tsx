@@ -4,10 +4,11 @@ import CountdownTimer from './CountdownTimer';
 import styles from './Countdown.module.css';
 import { SectionContainer, SectionHeader, Button, MotionFade } from '../ui';
 import { localization } from '../../lib/data';
+import data from '../../data/invitation.json';
 
 export default function Countdown({ timestamp }: CountdownProps) {
   // Use abstract generator for calendar link
-  const calendarLink = generateCalendarLink('google', 'Aurelia & Julian Wedding', timestamp);
+  const calendarLink = generateCalendarLink('google', `${data.couple.bride.nickname} & ${data.couple.groom.nickname} Wedding`, timestamp);
 
   return (
     <SectionContainer id="countdown" backgroundColor="background">

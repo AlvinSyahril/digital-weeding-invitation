@@ -2,6 +2,8 @@
   transition-property: opacity, transform, filter;
   transition-duration: var(--motion-dur-slow);
   transition-timing-function: var(--motion-ease-default);
+  will-change: opacity, transform, filter;
+  backface-visibility: hidden;
 }
 
 /* Visible State */
