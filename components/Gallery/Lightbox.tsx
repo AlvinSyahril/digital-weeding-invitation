@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { LightboxProps } from './types';
 import styles from './Gallery.module.css';
@@ -16,6 +17,11 @@ export default function Lightbox({
   onNext,
   onPrevious
 }: LightboxProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   // Focus Trap & Keyboard Navigation Refs
   const overlayRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
@@ -76,7 +82,9 @@ export default function Lightbox({
 
   const currentImageUrl = images[currentIndex];
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <div 
       className={styles.lightboxOverlay}
       ref={overlayRef}
@@ -124,6 +132,7 @@ export default function Lightbox({
       >
         ❯
       </button>
-    </div>
+    </div>,
+    document.body
   );
 }
