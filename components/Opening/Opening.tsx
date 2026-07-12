@@ -89,14 +89,11 @@ export default function Opening({ guestName }: OpeningOverlayProps) {
 
   return (
     <div className={`${styles.overlay} ${isExiting ? styles.overlayExit : ''} ${isAnimating ? styles.overlayAnimating : ''} invitation-opened-guard`}>
-      {/* We keep the component mounted during animation, and hide it via CSS when completed */}
-      {openingState !== 'completed' && (
-        <Envelope 
-          openingState={openingState} 
-          guestName={guestName} 
-          onOpen={handleOpen} 
-        />
-      )}
+      <Envelope 
+        openingState={openingState} 
+        guestName={guestName} 
+        onOpen={handleOpen} 
+      />
       
       <div className={`${styles.tapIndicator} ${openingState !== 'idle' ? styles.tapIndicatorHidden : ''}`}>
         Tap to Open
