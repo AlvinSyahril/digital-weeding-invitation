@@ -12,8 +12,11 @@ export default function Opening({ guestName }: OpeningOverlayProps) {
   useEffect(() => {
     if (openingState !== 'completed') {
       document.body.style.overflow = 'hidden';
+      document.body.classList.remove('invitation-opened');
     } else {
       document.body.style.overflow = 'auto';
+      document.body.classList.add('invitation-opened');
+      window.dispatchEvent(new Event('invitationOpened'));
     }
     
     return () => {
@@ -85,12 +88,15 @@ export default function Opening({ guestName }: OpeningOverlayProps) {
   const isAnimating = openingState !== 'idle';
 
   return (
-    <div className={`${styles.overlay} ${isExiting ? styles.overlayExit : ''} ${isAnimating ? styles.overlayAnimating : ''}`}>
-      <Envelope 
-        openingState={openingState} 
-        guestName={guestName} 
-        onOpen={handleOpen} 
-      />
+    <div className={`${styles.overlay} ${isExiting ? styles.overlayExit : ''} ${isAnimating ? styles.overlayAnimating : ''} invitation-opened-guard`}>
+      {/* We keep the component mounted during animation, and hide it via CSS when completed */}
+      {openingState !== 'completed' && (
+        <Envelope 
+          openingState={openingState} 
+          guestName={guestName} 
+          onOpen={handleOpen} 
+        />
+      )}
       
       <div className={`${styles.tapIndicator} ${openingState !== 'idle' ? styles.tapIndicatorHidden : ''}`}>
         Tap to Open

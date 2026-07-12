@@ -25,10 +25,20 @@ export default function MotionFade({
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setIsReduced(mediaQuery.matches);
 
+    let hasIntersected = false;
+
+    const tryReveal = () => {
+      // If it's intersecting AND the invitation is opened (or if there's no opening screen), then reveal
+      if (hasIntersected && (document.body.classList.contains('invitation-opened') || !document.querySelector('.invitation-opened-guard'))) {
+        setIsVisible(true);
+      }
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          hasIntersected = true;
+          tryReveal();
           observer.unobserve(entry.target);
         }
       },
@@ -42,8 +52,11 @@ export default function MotionFade({
       observer.observe(ref.current);
     }
 
+    window.addEventListener('invitationOpened', tryReveal);
+
     return () => {
       if (ref.current) observer.unobserve(ref.current);
+      window.removeEventListener('invitationOpened', tryReveal);
     };
   }, []);
 
