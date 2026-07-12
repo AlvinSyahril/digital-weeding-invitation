@@ -1,0 +1,97 @@
+@import '../styles/tokens.css';
+@import '../styles/colors.css';
+@import '../styles/typography.css';
+@import '../styles/animations.css';
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Luxury Details */
+::selection {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+}
+
+/* Custom Botanical Blue Scrollbar (Desktop only) */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+}
+
+/* Global Focus States for A11y */
+*:focus-visible {
+  outline: 2px solid var(--color-accent) !important;
+  outline-offset: 4px !important;
+  border-radius: var(--radius-xs);
+}
+
+/* Subtil Paper Grain Texture (2-3% opacity) */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+  opacity: 0.03;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Hero reveal animation */
+main {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--motion-dur-slow) var(--motion-ease-default), transform var(--motion-dur-slow) var(--motion-ease-default);
+}
+
+main.main-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  main {
+    transition: all var(--motion-dur-normal) var(--motion-ease-default)-out;
+    transform: none;
+  }
+}
+

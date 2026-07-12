@@ -1,0 +1,56 @@
+.ornamentWrapper {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.8;
+}
+
+.top-left {
+  top: -20px;
+  left: -20px;
+}
+
+.top-right {
+  top: -20px;
+  right: -20px;
+  transform: scaleX(-1);
+}
+
+.bottom-left {
+  bottom: -20px;
+  left: -20px;
+  transform: scaleY(-1);
+}
+
+.bottom-right {
+  bottom: -40px;
+  right: -30px;
+  transform: scale(-1, -1);
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-center {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-center {
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%) scaleY(-1);
+}
+
+@media (min-width: 768px) {
+  .top-left { top: -60px; left: -60px; }
+  .top-right { top: -60px; right: -60px; }
+  .bottom-left { bottom: -60px; left: -60px; }
+  .bottom-right { bottom: -80px; right: -70px; }
+  .top-center { top: -60px; }
+  .bottom-center { bottom: -60px; }
+}

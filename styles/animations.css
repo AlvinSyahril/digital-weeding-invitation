@@ -1,0 +1,64 @@
+/* Antigravity Animation System Tokens (Motion Design System) */
+
+:root {
+  /* Durations */
+  --motion-dur-fast: 180ms;
+  --motion-dur-normal: 350ms;
+  --motion-dur-slow: 700ms;
+  
+  /* Easing */
+  --motion-ease-default: cubic-bezier(0.22, 1, 0.36, 1);
+  
+  /* Distances */
+  --motion-dist-fade: 20px;
+  --motion-dist-slide: 40px;
+  --motion-dist-reveal: 80px;
+
+  /* Scales */
+  --motion-scale-hover: 1.01;
+  --motion-scale-camera: 1.015;
+  --motion-scale-image: 1.03;
+
+  /* Blurs */
+  --motion-blur-default: 6px;
+  --motion-blur-max: 10px;
+}
+
+/* 
+ * ZERO MAGIC NUMBERS 
+ * All animations should consume these tokens 
+ */
+
+/* Reduced Motion Overrides */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-dur-normal: 180ms;
+    --motion-dur-slow: 180ms;
+    
+    --motion-dist-fade: 0px;
+    --motion-dist-slide: 0px;
+    --motion-dist-reveal: 0px;
+    
+    --motion-scale-hover: 1;
+    --motion-scale-camera: 1;
+    --motion-scale-image: 1;
+  }
+  
+  /* Force disable transitions on pseudo-elements and unmanaged transforms if needed */
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Example preset utility class */
+.fade-in {
+  animation: fadeIn var(--motion-dur-normal) var(--motion-ease-default) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

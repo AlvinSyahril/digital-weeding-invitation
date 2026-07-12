@@ -1,0 +1,122 @@
+.eventSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.eventsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl, 48px);
+  width: 100%;
+  max-width: var(--container-sm);
+  margin-top: var(--spacing-lg, 32px);
+}
+
+.eventCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xl, 48px) var(--spacing-lg, 32px);
+  gap: var(--spacing-sm, 16px);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  color: var(--color-secondary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--spacing-xs, 8px);
+}
+
+.time {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding-bottom: var(--spacing-md, 24px);
+  border-bottom: 1px solid var(--color-text-light, rgba(0, 0, 0, 0.1));
+  width: 80%;
+  margin: 0 auto;
+}
+
+.locationBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 8px);
+  margin-top: var(--spacing-xs, 8px);
+}
+
+.venue {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.address {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.mapAction {
+  margin-top: var(--spacing-lg, 32px);
+}
+
+.mapLink {
+  font-family: var(--font-body);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 4px;
+  transition: all var(--motion-dur-normal) var(--motion-ease-default);
+}
+
+.mapLink:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-xxl, 64px) var(--spacing-md, 24px);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  font-family: var(--font-body);
+}
+
+/* Tablet & Desktop Layout */
+@media (min-width: 768px) {
+  .eventsGrid {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+  }
+  
+  .eventsGrid > * {
+    flex: 1;
+  }
+  
+  .eventsGrid > *:not(:last-child) {
+    border-right: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .eventCardContent {
+    padding: var(--spacing-xl, 48px) var(--spacing-xxl, 64px);
+    height: 100%;
+  }
+}

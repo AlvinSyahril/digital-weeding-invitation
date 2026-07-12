@@ -1,0 +1,27 @@
+:root {
+  /* Containers */
+  --container-sm: 720px;
+  --container-md: 960px;
+  --container-lg: 1180px;
+
+  /* Vertical Rhythm (Section Padding) */
+  --section-pad-desktop: 120px;
+  --section-pad-tablet: 96px;
+  --section-pad-mobile: 80px;
+
+  /* Border Radius */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Premium Shadows */
+  --shadow-idle: 0 16px 40px rgba(32, 60, 99, 0.04);
+  --shadow-hover: 0 24px 60px rgba(32, 60, 99, 0.08);
+  --shadow-heavy: 0 32px 80px rgba(32, 60, 99, 0.12);
+  
+  /* Hairline Border */
+  --border-hairline: 1px solid rgba(32, 60, 99, 0.08);
+  --border-glass: 1px solid rgba(255, 255, 255, 0.6);
+}

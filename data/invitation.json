@@ -1,0 +1,96 @@
+{
+  "bride": {
+    "name": "Dwi",
+    "fullName": "Dwi Hasri Septianti, S.Sos",
+    "parents": "Putri Bapak Tumari & Ibu Uun Sulaiha",
+    "instagram": "@dwihasri"
+  },
+  "groom": {
+    "name": "Hanief",
+    "fullName": "Raden Hanief Izhar Zulkarnain, S.M",
+    "parents": "Putra Bapak Ii Ali Imron & Ibu Ratu Endang Geminiwati",
+    "instagram": "@rhaniefizharz"
+  },
+  "date": {
+    "day": "Wednesday",
+    "fullDate": "2 December 2026",
+    "timestamp": "2026-12-02T09:00:00Z"
+  },
+  "event": {
+    "ceremony": {
+      "title": "Akad Nikah",
+      "time": "08:00 WIB - Selesai",
+      "venue": "Kediaman Mempelai",
+      "address": "Jl. Mawar II Ciwiru, Kelurahan Sumber Kecamatan Sumber",
+      "navigationUrl": "https://maps.app.goo.gl/9iAQDeWTVR4RHbPi6"
+    },
+    "reception": {
+      "title": "Resepsi Pernikahan",
+      "time": "11:00 WIB - Selesai",
+      "venue": "Kediaman Mempelai",
+      "address": "Jl. Mawar II Ciwiru, Kelurahan Sumber Kecamatan Sumber",
+      "navigationUrl": "https://maps.app.goo.gl/9iAQDeWTVR4RHbPi6"
+    }
+  },
+  "quote": {
+    "text": "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.",
+    "source": "QS. Ar-Rum: 21"
+  },
+  "loveStory": [],
+  "gallery": {
+    "eyebrow": "MEMORIES",
+    "title": "Captured With Love",
+    "description": "Every photograph tells a story, every smile captures a memory, and every moment brings us closer to forever.",
+    "quote": {
+      "text": "Every picture tells a story of love, laughter, and forever.",
+      "author": "Hanief & Dwi"
+    },
+    "featuredImage": "/assets/client/gallery/HRM_2104.jpg",
+    "images": [
+      "/assets/client/gallery/HRM_2104.jpg",
+      "/assets/client/gallery/HRM_2118.jpg",
+      "/assets/client/gallery/HRM_2121.jpg",
+      "/assets/client/gallery/HRM_2127.jpg",
+      "/assets/client/gallery/HRM_2164.jpg",
+      "/assets/client/gallery/HRM_2165.jpg",
+      "/assets/client/gallery/HRM_2168.jpg"
+    ]
+  },
+  "gift": {
+    "title": "Wedding Gift",
+    "description": "Soon",
+    "banks": []
+  },
+  "branding": {
+    "theme": "botanical-blue",
+    "primaryColor": "#203C63",
+    "accentColor": "#4C7EB9",
+    "backgroundColor": "#FAF9F7",
+    "displayFont": "Cormorant Garamond",
+    "bodyFont": "Plus Jakarta Sans",
+    "borderRadius": "lg",
+    "motionPreset": "luxury"
+  },
+  "seo": {
+    "title": "The Wedding of Hanief & Dwi",
+    "description": "You are cordially invited to our wedding celebration.",
+    "ogImage": "/assets/client/seo/og-image.webp"
+  },
+  "music": {
+    "url": "/assets/client/music/The Moment - Wedding Instrumental (No copyright music) - The NAGA Channel.mp3",
+    "title": "Beautiful In White",
+    "artist": "Westlife"
+  },
+  "localization": {
+    "openInvitation": "Buka Undangan",
+    "saveTheDate": "Save The Date",
+    "theWeddingOf": "THE WEDDING OF",
+    "ourGallery": "MEMORIES",
+    "rsvp": "RSVP",
+    "gift": "Wedding Gift",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "bride": {
+    "name": "",
+    "fullName": "",
+    "parents": "",
+    "instagram": ""
+  },
+  "groom": {
+    "name": "",
+    "fullName": "",
+    "parents": "",
+    "instagram": ""
+  },
+  "date": {
+    "day": "Wednesday",
+    "fullDate": "",
+    "timestamp": ""
+  },
+  "event": {
+    "ceremony": {
+      "title": "",
+      "time": "",
+      "venue": "",
+      "address": "",
+      "navigationUrl": ""
+    },
+    "reception": {
+      "title": "",
+      "time": "",
+      "venue": "",
+      "address": "",
+      "navigationUrl": ""
+    }
+  },
+  "quote": {
+    "text": "",
+    "source": ""
+  },
+  "loveStory": [],
+  "gallery": {
+    "eyebrow": "MEMORIES",
+    "title": "Captured With Love",
+    "description": "Every photograph tells a story, every smile captures a memory, and every moment brings us closer to forever.",
+    "quote": {
+      "text": "Every picture tells a story of love, laughter, and forever.",
+      "author": "Hanief & Dwi"
+    },
+    "featuredImage": "",
+    "images": []
+  },
+  "gift": {
+    "title": "Wedding Gift",
+    "description": "Soon",
+    "banks": []
+  },
+  "branding": {
+    "theme": "botanical-blue",
+    "primaryColor": "#203C63",
+    "accentColor": "#4C7EB9",
+    "backgroundColor": "#FAF9F7",
+    "displayFont": "Cormorant Garamond",
+    "bodyFont": "Plus Jakarta Sans",
+    "borderRadius": "lg",
+    "motionPreset": "luxury"
+  },
+  "seo": {
+    "title": "The Wedding of Hanief & Dwi",
+    "description": "You are cordially invited to our wedding celebration.",
+    "ogImage": "/assets/client/seo/og-image.webp"
+  },
+  "music": {
+    "url": "/assets/client/music/background.mp3",
+    "title": "Beautiful In White",
+    "artist": "Westlife"
+  },
+  "localization": {
+    "openInvitation": "Buka Undangan",
+    "saveTheDate": "Save The Date",
+    "theWeddingOf": "THE WEDDING OF",
+    "ourGallery": "MEMORIES",
+    "rsvp": "RSVP",
+    "gift": "Wedding Gift",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  }
+}

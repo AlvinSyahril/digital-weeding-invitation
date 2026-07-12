@@ -1,0 +1,306 @@
+/* --- SECTION OVERRIDES --- */
+.sectionOverride {
+  padding: var(--section-pad-desktop) 0; /* Massive padding as requested */
+  position: relative;
+  background-color: var(--color-surface); /* Keep it light */
+}
+
+.sectionOverride::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fullWidth {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.galleryWrapper {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.gallerySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md, 24px);
+}
+
+/* --- INTRO STORYTELLING --- */
+.introBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 48px; /* 48px spacing from title to hero */
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm, 16px);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md, 24px);
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-md, 16px);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+.heroSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-bottom: 48px; /* Spacing to grid reduced as requested */
+}
+
+/* --- FEATURED HERO IMAGE --- */
+.featuredWrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl); /* Adjusted as requested */
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: var(--color-background);
+  transition: transform var(--motion-dur-slow) var(--motion-ease-default), box-shadow var(--motion-dur-slow) var(--motion-ease-default);
+  box-shadow: var(--shadow-idle); /* Soft editorial shadow */
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .featuredWrapper {
+    aspect-ratio: 16 / 10; /* Wider on desktop for editorial feel */
+  }
+}
+
+.featuredWrapper:hover {
+  transform: scale(var(--motion-scale-image)) translateY(-4px);
+  box-shadow: var(--shadow-heavy);
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: scale(var(--motion-scale-hover)); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.featuredImage {
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--motion-dur-slow) var(--motion-ease-default);
+  animation: slideFadeIn var(--motion-dur-slow) var(--motion-ease-default) forwards;
+}
+
+.featuredWrapper:hover .featuredImage {
+  transform: scale(var(--motion-scale-hover)); /* Slight inner zoom */
+}
+
+/* --- SLIDER CONTROLS --- */
+.sliderNavButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  transition: all var(--motion-dur-normal) var(--motion-ease-default);
+  opacity: 0; /* Hidden by default, shown on hover */
+}
+
+@media (max-width: 768px) {
+  .sliderNavButton {
+    opacity: 1; /* Always show on mobile */
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.featuredWrapper:hover .sliderNavButton {
+  opacity: 1;
+}
+
+.sliderNavButton:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.sliderPrev {
+  left: 16px;
+}
+
+.sliderNext {
+  right: 16px;
+}
+
+/* --- FLOATING QUOTE CARD --- */
+.floatingQuoteCard {
+  background: rgba(255, 255, 255, 0.85); /* 85% white glassmorphism */
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: var(--shadow-heavy);
+  max-width: 620px; /* Increased to 620px */
+  width: 90%;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  margin-top: -60px; /* Overlaps the bottom of the hero image */
+}
+
+.quoteText {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  line-height: 1.4;
+  color: var(--color-secondary);
+  font-style: italic;
+  margin-bottom: var(--spacing-sm, 16px);
+}
+
+.quoteAuthor {
+  font-family: var(--font-body);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+}
+
+
+/* --- LIGHTBOX STYLES --- */
+
+.lightboxOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightboxContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightboxImageWrapper {
+  position: relative;
+  width: 90%;
+  height: 85%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightboxImage {
+  object-fit: contain;
+}
+
+.closeButton {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 10000;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity var(--motion-dur-fast) var(--motion-ease-default);
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 16px 12px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: all var(--motion-dur-normal) var(--motion-ease-default);
+  border-radius: var(--radius-xs);
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.navButton:focus-visible {
+  outline: 2px solid white;
+}
+
+.navPrev {
+  left: 24px;
+}
+
+.navNext {
+  right: 24px;
+}

@@ -1,0 +1,97 @@
+.countdownSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.timerWrapper {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm, 16px);
+  width: 100%;
+  margin-top: var(--spacing-lg, 32px);
+  margin-bottom: var(--spacing-xl, 48px);
+  /* Prevents shift when changing states */
+  min-height: 120px;
+}
+
+/* Card for numbers */
+.countdownCard {
+  /* Using flexbox for content layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* Stable Dimensions (Zero CLS Strategy) */
+  min-width: 68px;
+  max-width: 90px;
+  aspect-ratio: 4 / 5;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-idle);
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  color: var(--color-secondary);
+  line-height: 1.1;
+  /* Monospaced-like behavior for numbers to prevent horizontal shifting */
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-xs, 8px);
+}
+
+.messageBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-md, 24px);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 20px rgba(32, 60, 99, 0.05);
+}
+
+.finishedText {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-accent);
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (min-width: 375px) {
+  .countdownCard {
+    min-width: 76px;
+  }
+}
+
+@media (min-width: 768px) {
+  .timerWrapper {
+    gap: var(--spacing-md, 24px);
+  }
+  
+  .countdownCard {
+    min-width: 90px;
+    max-width: 110px;
+  }
+  
+  .number {
+    font-size: var(--text-4xl);
+  }
+  
+  .label {
+    font-size: var(--text-sm);
+  }
+}

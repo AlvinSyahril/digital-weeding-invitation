@@ -1,0 +1,193 @@
+.heroContainer {
+  position: relative;
+  width: 100vw;
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFD 50%, #FFFFFF 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------- LUXURY GRID LAYOUT ---------------- */
+.heroGrid {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .heroGrid {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    min-height: 100vh;
+  }
+}
+
+/* ---------------- TEXT COLUMN (LEFT) ---------------- */
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--spacing-xxl, 64px) var(--spacing-md, 24px);
+  padding-top: 15vh;
+}
+
+@media (min-width: 1024px) {
+  .textColumn {
+    padding-left: 12%;
+    padding-right: 0;
+    padding-top: 0;
+  }
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------- TYPOGRAPHY & RHYTHM ---------------- */
+.eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #64748B;
+  margin-bottom: 40px; /* Specific rhythm */
+}
+
+.namesBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 42px; /* Gap before date */
+}
+
+.name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(56px, 8vw, 82px);
+  color: #243A63; /* Specific color */
+  line-height: 0.95;
+  font-weight: 500;
+  margin: 0;
+}
+
+.ampersand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6vw, 54px);
+  color: #64748B; /* Soft blue */
+  line-height: 1;
+  font-style: italic;
+  margin: 10px 0 10px 15%; /* 10px rhythm top/bottom, offset to center optically */
+}
+
+.date {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #94A3B8;
+  text-transform: uppercase;
+  margin-bottom: 36px; /* Specific rhythm */
+}
+
+/* ---------------- CTA BUTTON ---------------- */
+.ctaWrapper {
+  display: inline-block;
+}
+
+.ctaButton {
+  padding: 0 48px; /* Large horizontal padding */
+  height: 52px;
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--motion-dur-normal) var(--motion-ease-default);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-primary);
+}
+
+/* ---------------- IMAGE COLUMN (RIGHT) ---------------- */
+.imageColumn {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .imageColumn {
+    height: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.imageFadeWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .imageFadeWrapper {
+    align-items: center;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 620px; /* Constrained to 620px per requirements */
+  max-height: 80vh;
+}
+
+@media (min-width: 1024px) {
+  .imageWrapper {
+    height: 110%;
+    max-height: 900px;
+    margin-bottom: -5%;
+  }
+}
+
+.heroImage {
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+@media (min-width: 1024px) {
+  .heroImage {
+    object-position: center;
+  }
+}
+
+/* Reduce motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .ctaButton {
+    transition: none !important;
+  }
+}

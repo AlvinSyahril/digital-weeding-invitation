@@ -1,0 +1,122 @@
+.loveStorySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-sm);
+  margin-top: var(--spacing-xl, 48px);
+  padding: var(--spacing-md, 24px) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxl, 64px);
+}
+
+/* 
+  The vertical line holding the timeline together. 
+  It extends 100% of the parent height, guaranteeing it never breaks 
+  no matter how long the descriptions are.
+*/
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px; /* Mobile left-aligned */
+  width: 2px;
+  background-color: var(--color-accent);
+  opacity: 0.3;
+}
+
+/* Individual Timeline Item Container */
+.timelineItem {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 64px; /* Leave space for line and dot */
+}
+
+/* The timeline dot (marble) */
+.timelineDot {
+  position: absolute;
+  left: 17px; /* 24px (line pos) - 7px (half dot width) */
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-accent);
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--color-background); /* Clears line behind it */
+}
+
+/* Content styling */
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 8px);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-secondary);
+  line-height: var(--leading-tight);
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-loose);
+  white-space: pre-wrap; /* Allows multiline descriptions elegantly */
+}
+
+/* Tablet & Desktop Layout (Alternating Sides) */
+@media (min-width: 768px) {
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timelineItem {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 48px;
+    align-self: flex-start;
+    text-align: right;
+  }
+
+  .timelineItem:nth-child(even) {
+    align-self: flex-end;
+    padding-right: 0;
+    padding-left: 48px;
+    text-align: left;
+  }
+
+  /* Adjust dot positioning for right side */
+  .timelineItem .timelineDot {
+    left: auto;
+    right: -8px;
+  }
+
+  /* Adjust dot positioning for left side */
+  .timelineItem:nth-child(even) .timelineDot {
+    right: auto;
+    left: -8px;
+  }
+}

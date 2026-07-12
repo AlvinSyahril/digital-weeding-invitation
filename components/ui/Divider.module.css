@@ -1,0 +1,21 @@
+.dividerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+  opacity: 0.6;
+}
+
+.line {
+  height: 1px;
+  width: 60px;
+  background-color: var(--color-neutral);
+}
+
+.diamond {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent);
+  transform: rotate(45deg);
+  margin: 0 16px;
+}

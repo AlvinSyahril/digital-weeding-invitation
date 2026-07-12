@@ -1,0 +1,4 @@
+export const OVERLAY_ANIMATIONS = {
+  DURATION_OPEN: 1000,
+  DELAY_EXIT: 500,
+};

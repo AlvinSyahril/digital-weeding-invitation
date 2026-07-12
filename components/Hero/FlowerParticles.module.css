@@ -1,0 +1,53 @@
+.particleContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* Behind the content */
+  pointer-events: none; /* Let clicks pass through */
+}
+
+@keyframes fallAndSway {
+  0% {
+    transform: translateY(-10vh) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(30px);
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg) translateX(-30px);
+    opacity: 0;
+  }
+}
+
+.petal {
+  position: absolute;
+  top: -10vh;
+  /* Soft petal shape */
+  border-radius: 100% 0 100% 0;
+  animation-name: fallAndSway;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.blue {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+}
+
+.lightBlue {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+}
+
+.gold {
+  background: linear-gradient(135deg, #d4af37, var(--color-accent));
+}

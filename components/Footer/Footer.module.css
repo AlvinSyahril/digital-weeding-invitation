@@ -1,0 +1,72 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-xxl, 64px) var(--spacing-md, 24px) 120px; /* Extra bottom padding for mobile scroll buffer */
+  background-color: var(--color-primary); /* Light blue */
+  color: var(--color-secondary); /* Dark blue text for contrast */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logoWrapper {
+  margin-bottom: var(--spacing-lg, 32px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImage {
+  object-fit: contain;
+  opacity: 0.8; /* Slight opacity so it blends with the dark background */
+}
+
+.thankYouText {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: var(--spacing-xl, 48px);
+  margin-bottom: var(--spacing-md, 24px);
+  opacity: 0.9;
+}
+
+.coupleNames {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.1;
+  color: var(--color-secondary); /* Dark contrast */
+  margin-bottom: var(--spacing-xxl, 64px);
+  font-weight: 400;
+}
+
+.credits {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: var(--spacing-lg, 32px);
+}
+
+.credits a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity var(--motion-dur-fast) var(--motion-ease-default);
+}
+
+.credits a:hover {
+  opacity: 1;
+}
+
+.divider {
+  width: 1px;
+  height: 60px;
+  background-color: var(--color-accent);
+  opacity: 0.5;
+  margin: var(--spacing-md, 24px) 0;
+}

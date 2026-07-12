@@ -1,0 +1,26 @@
+.section {
+  width: 100%;
+  padding: 64px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.bgBackground {
+  background-color: var(--color-background);
+}
+
+.bgSurface {
+  background-color: var(--color-surface);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-sm);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 100px 48px;
+  }
+}

@@ -1,0 +1,97 @@
+.coupleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl, 48px);
+  width: 100%;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xxl, 64px);
+  width: 100%;
+}
+
+.personCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  height: 100%;
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  border-radius: 200px 200px 16px 16px; /* Elegant arch shape */
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg, 32px);
+  box-shadow: 0 12px 32px rgba(32, 60, 99, 0.1);
+  background-color: var(--color-background);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.role {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-xs, 8px);
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  color: var(--color-secondary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--spacing-sm, 12px);
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.parents {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md, 24px);
+  line-height: var(--leading-normal);
+}
+
+.instagramWrapper {
+  margin-top: auto; /* Pushes the button to the bottom so both cards align */
+}
+
+/* Tablet & Desktop Layout */
+@media (min-width: 768px) {
+  .cardsWrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--spacing-xl, 48px);
+  }
+  
+  .imageWrapper {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardsWrapper {
+    gap: 80px;
+  }
+  
+  .imageWrapper {
+    max-width: 320px;
+  }
+}

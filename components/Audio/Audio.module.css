@@ -1,0 +1,148 @@
+.audioControlsWrapper {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .audioControlsWrapper {
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    right: 20px;
+  }
+}
+
+.audioButton {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-idle);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--motion-dur-normal) var(--motion-ease-default), box-shadow var(--motion-dur-normal) var(--motion-ease-default);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .audioButton {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.audioButton:hover {
+  transform: scale(var(--motion-scale-hover));
+  box-shadow: 0 12px 40px rgba(18, 40, 80, 0.12), 0 4px 12px rgba(18, 40, 80, 0.06);
+}
+
+.audioButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.iconLoading {
+  width: 20px;
+  height: 20px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinning .icon {
+  animation: spinSlowly 10s linear infinite;
+}
+
+@keyframes spinSlowly {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Courtesy Toast */
+.courtesyToast {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-idle);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  
+  /* Apple-style toast animation */
+  animation: toastReveal 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes toastReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .audioButton {
+    transition: opacity var(--motion-dur-fast) var(--motion-ease-default) !important;
+  }
+  .audioButton:hover {
+    transform: none !important;
+  }
+  .spinning .icon {
+    animation: none;
+  }
+  .iconLoading {
+    animation: none;
+  }
+  
+  @keyframes toastReveal {
+    0% {
+      opacity: 0;
+      transform: none;
+    }
+    15% {
+      opacity: 1;
+      transform: none;
+    }
+    85% {
+      opacity: 1;
+      transform: none;
+    }
+    100% {
+      opacity: 0;
+      transform: none;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+export const COUPLE_ANIMATION = {
+  DELAY_HEADER: 0,
+  DELAY_BRIDE: 300,
+  DELAY_GROOM: 600,
+};

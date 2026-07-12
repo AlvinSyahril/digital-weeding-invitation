@@ -1,0 +1,83 @@
+.giftSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-text-primary);
+  text-align: center;
+  line-height: var(--leading-relaxed);
+  max-width: var(--container-sm);
+  margin: var(--spacing-md, 24px) auto var(--spacing-xl, 48px);
+}
+
+.banksGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 24px);
+  width: 100%;
+  max-width: var(--container-sm);
+}
+
+.bankCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xl, 48px) var(--spacing-md, 24px);
+  gap: var(--spacing-xs, 8px);
+}
+
+.bankName {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-xs, 8px);
+}
+
+.accountNumber {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+}
+
+.recipient {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-lg, 32px);
+}
+
+.emptyState {
+  padding: var(--spacing-xxl, 64px) var(--spacing-md, 24px);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  font-family: var(--font-body);
+}
+
+/* Tablet & Desktop Layout */
+@media (min-width: 768px) {
+  .banksGrid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  /* If there's more than one card, we can restrict max-width so they don't stretch too long horizontally */
+  .bankCardContent {
+    min-width: 300px;
+  }
+}

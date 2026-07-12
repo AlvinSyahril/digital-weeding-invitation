@@ -1,0 +1,50 @@
+.motionWrapper {
+  transition-property: opacity, transform, filter;
+  transition-duration: var(--motion-dur-slow);
+  transition-timing-function: var(--motion-ease-default);
+}
+
+/* Visible State */
+.visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  filter: blur(0px);
+}
+
+/* Hidden States */
+.hidden-none {
+  opacity: 0;
+  transform: scale(1);
+}
+
+.hidden-up {
+  opacity: 0;
+  transform: translateY(var(--motion-dist-slide));
+}
+
+.hidden-down {
+  opacity: 0;
+  transform: translateY(calc(var(--motion-dist-slide) * -1));
+}
+
+.hidden-left {
+  opacity: 0;
+  transform: translateX(var(--motion-dist-slide));
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(calc(var(--motion-dist-slide) * -1));
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .motionWrapper {
+    /* For users preferring reduced motion, we still fade, but quickly, without movement */
+    transition-duration: var(--motion-dur-fast) !important;
+  }
+  
+  .hidden-up, .hidden-down, .hidden-left, .hidden-right {
+    transform: none !important;
+  }
+}

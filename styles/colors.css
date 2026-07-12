@@ -1,0 +1,18 @@
+:root {
+  /* Primary Colors */
+  --color-primary: #CFE8F7;
+  --color-secondary: #203C63;
+  --color-accent: #4C7EB9;
+  
+  /* Backgrounds & Surfaces */
+  --color-background: #FAF9F7;
+  --color-surface: #EAF3F8;
+  
+  /* Text Colors */
+  --color-text-primary: #1F2F46;
+  --color-text-secondary: #6D7D90;
+  
+  /* Accents & Neutrals */
+  --color-flower-accent: #CFAFD8;
+  --color-neutral: #D9DEE3;
+}

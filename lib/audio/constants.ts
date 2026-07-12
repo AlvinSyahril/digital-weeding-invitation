@@ -1,0 +1,6 @@
+export const AUDIO_CONSTANTS = {
+  DEFAULT_VOLUME: 0.7,
+  FADE_IN_DURATION: 2000,
+  FADE_OUT_DURATION: 800,
+  COURTESY_DURATION: 2500, // 2.5 seconds
+} as const;
