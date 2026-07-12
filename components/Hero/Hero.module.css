@@ -65,14 +65,23 @@
 
 .namesBlock {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 42px; /* Gap before date */
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px; /* Gap before date on mobile */
+}
+
+@media (min-width: 1024px) {
+  .namesBlock {
+    gap: 20px;
+    margin-bottom: 42px;
+  }
 }
 
 .name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(56px, 8vw, 82px);
+  font-size: clamp(38px, 8vw, 82px);
   color: #243A63; /* Specific color */
   line-height: 0.95;
   font-weight: 500;
@@ -81,11 +90,11 @@
 
 .ampersand {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(40px, 6vw, 54px);
+  font-size: clamp(28px, 6vw, 54px);
   color: #64748B; /* Soft blue */
   line-height: 1;
   font-style: italic;
-  margin: 10px 0 10px 15%; /* 10px rhythm top/bottom, offset to center optically */
+  margin: 0; 
 }
 
 .date {
